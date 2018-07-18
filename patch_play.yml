@@ -1,0 +1,14 @@
+- hosts: "{{targetfilter | default('SPECIFY')}}"
+# you can also use AND combination appservers:&{{targethost | default(currenthost)}} , like apply on  targethost assuming it belongs to group appservers
+# or  {{new_server}}:{{old_server}}
+
+  pre_tasks:
+    - debug: msg="Pre tasks section"
+
+#  vars_files:
+#    - common_vars.yml
+
+  tasks:
+
+    - debug: msg="Tasks section"
+
